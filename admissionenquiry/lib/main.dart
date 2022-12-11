@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -36,7 +35,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     _controller = VideoPlayerController.network(
-      'https://raw.githubusercontent.com/Abdulhaseeb101/hindustan-addmission-app-resources/main/videos/Mr.Dennis.mp4',
+      'https://drive.google.com/uc?export=view&id=1vwLAljWAYCbaBWXGNhxFH5UBYLml-8VZ',
     );
 
     // Initialize the controller and store the Future for later use.
@@ -104,3 +103,42 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     );
   }
 }
+
+// import 'dart:io';
+
+// import 'package:flutter/material.dart';
+// import 'package:video_player/video_player.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
+
+// void main() {
+//   runApp(const MaterialApp(home: WebViewSample()));
+// }
+
+// class WebViewSample extends StatefulWidget {
+//   const WebViewSample({super.key});
+
+//   @override
+//   _WebViewSampleState createState() => _WebViewSampleState();
+// }
+
+// class _WebViewSampleState extends State<WebViewSample> {
+//   String url =
+//       'https://drive.google.com/file/d/1O8WF2MsdyoKpQZE2973IFPRpqwKUjm_q/preview';
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Enable hybrid composition.
+//     if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('webview_flutter'),
+//       ),
+//       body:
+//           WebView(javascriptMode: JavascriptMode.unrestricted, initialUrl: url),
+//     );
+//   }
+// }

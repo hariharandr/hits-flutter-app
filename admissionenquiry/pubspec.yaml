@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_inappwebview: ^5.7.2+1
   video_player: ^2.4.8
+  webview_flutter: ^3.0.4
 
 dev_dependencies:
   flutter_test:
