@@ -37,7 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_inappwebview: ^5.7.2+1
   video_player: ^2.4.8
+<<<<<<< HEAD
   flutter_native_splash: ^2.2.16
+=======
+  webview_flutter: ^3.0.4
+>>>>>>> 3196370 (video link comp is working fine)
 
 dev_dependencies:
   flutter_test:
