@@ -92,12 +92,14 @@ class HomePage extends StatelessWidget {
             ),
             TextButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 60, 74, 96)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    const Color.fromARGB(255, 60, 74, 96)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.0),
-                  ))),
+                  ),
+                ),
+              ),
               onPressed: () {},
               child: const Text(
                 'CODE',
