@@ -1,3 +1,4 @@
+import 'package:admissionenquiry/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class TopicDrawer extends StatelessWidget {
@@ -11,7 +12,7 @@ class TopicDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: CustomColors.accentColor,
             ),
             child: Text('Drawer Header'),
           ),

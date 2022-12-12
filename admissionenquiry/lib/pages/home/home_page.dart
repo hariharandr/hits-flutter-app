@@ -26,13 +26,6 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 60, 74, 96)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      ))),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -50,15 +43,6 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(width: 100.0),
                 TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(255, 60, 74, 96)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      ),
-                    ),
-                  ),
                   onPressed: () {},
                   child: const Text(
                     'PG',
@@ -74,13 +58,6 @@ class HomePage extends StatelessWidget {
               height: 40.0,
             ),
             TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 60, 74, 96)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ))),
               onPressed: () {},
               child: const Text(
                 'Research',
@@ -94,15 +71,6 @@ class HomePage extends StatelessWidget {
               height: 40,
             ),
             TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    const Color.fromARGB(255, 60, 74, 96)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ),
-                ),
-              ),
               onPressed: () {},
               child: const Text(
                 'CODE',
