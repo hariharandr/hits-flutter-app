@@ -1,5 +1,5 @@
+import 'package:admissionenquiry/widgets/app_bar.dart';
 import 'package:admissionenquiry/widgets/depts_tile.dart';
-import 'package:admissionenquiry/widgets/scaffold_with_drawer.dart';
 import 'package:flutter/material.dart';
 
 class UGDeptPage extends StatelessWidget {
@@ -7,8 +7,8 @@ class UGDeptPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldWithDrawer(
-      title: const Text('UG Departments'),
+    return Scaffold(
+      appBar: const CustomAppBar(title: Text('UG Departments')),
       body: ListView(
         padding: const EdgeInsets.all(10),
         children: const <Widget>[

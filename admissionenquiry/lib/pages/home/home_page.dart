@@ -1,5 +1,6 @@
-import 'package:admissionenquiry/pages/ug_dept_page.dart';
-import 'package:admissionenquiry/widgets/scaffold_with_drawer.dart';
+import 'package:admissionenquiry/pages/ug/ug_dept_page.dart';
+import 'package:admissionenquiry/widgets/app_bar.dart';
+import 'package:admissionenquiry/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,15 +8,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldWithDrawer(
-      title: Image.asset('assets/HITSLogo.png'),
+    return Scaffold(
+      appBar: CustomAppBar(title: Image.asset('assets/HITSLogo.png')),
       body: Center(
         child: Column(
           children: [
             const SizedBox(height: 80.0),
-            const Text(
+            Text(
               'Explore programmes offered by HITS',
-              style: TextStyle(fontSize: 50.0),
+              style: Theme.of(context).textTheme.headline4,
               textAlign: TextAlign.center,
             ),
             const SizedBox(
@@ -25,13 +26,6 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 60, 74, 96)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      ))),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -49,13 +43,6 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(width: 100.0),
                 TextButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 60, 74, 96)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      ))),
                   onPressed: () {},
                   child: const Text(
                     'PG',
@@ -71,13 +58,6 @@ class HomePage extends StatelessWidget {
               height: 40.0,
             ),
             TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 60, 74, 96)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ))),
               onPressed: () {},
               child: const Text(
                 'Research',
@@ -91,15 +71,6 @@ class HomePage extends StatelessWidget {
               height: 40,
             ),
             TextButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
-                    const Color.fromARGB(255, 60, 74, 96)),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                  ),
-                ),
-              ),
               onPressed: () {},
               child: const Text(
                 'CODE',
@@ -112,6 +83,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      drawer: const TopicDrawer(),
     );
   }
 }
