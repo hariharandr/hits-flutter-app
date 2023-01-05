@@ -2,7 +2,9 @@ import 'package:admissionenquiry/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class TopicDrawer extends StatelessWidget {
-  const TopicDrawer({super.key});
+  String drawerHeader = '';
+
+  TopicDrawer({super.key, required this.drawerHeader});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +12,11 @@ class TopicDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
+          DrawerHeader(
+            decoration: const BoxDecoration(
               color: CustomColors.accentColor,
             ),
-            child: Text('Drawer Header'),
+            child: Text(drawerHeader),
           ),
           ListTile(
             title: const Text('Item 1'),
