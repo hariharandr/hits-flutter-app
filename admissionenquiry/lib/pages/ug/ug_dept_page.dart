@@ -1,4 +1,4 @@
-import 'package:admissionenquiry/pages/ug/aero_eng_dept/bt_aero_eng_page.dart';
+import 'package:admissionenquiry/pages/ug/ug_course_page.dart';
 import 'package:admissionenquiry/widgets/app_bar.dart';
 import 'package:admissionenquiry/widgets/depts_tile.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,10 @@ class UGDeptPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const BTAeroEngPage()),
+                          builder: (context) => const UGCoursePage(
+                                courseName: 'B.Tech - Aeronautical Engineering',
+                                topic: 'About the Programme',
+                              )),
                     );
                   },
                 ),
