@@ -83,7 +83,9 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      drawer: const TopicDrawer(),
+      drawer: TopicDrawer(
+        drawerHeader: 'Home',
+      ),
     );
   }
 }
