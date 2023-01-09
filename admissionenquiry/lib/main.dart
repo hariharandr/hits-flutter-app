@@ -1,3 +1,4 @@
+import 'package:admissionenquiry/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:admissionenquiry/pages/home/home_page.dart';
 import 'package:admissionenquiry/theme/custom_theme.dart';
@@ -32,6 +33,8 @@ class _MyAppState extends State<MyApp> {
       theme: CustomTheme.lightTheme, //3
       darkTheme: CustomTheme.darkTheme, //4
       themeMode: currentTheme.currentTheme,
+      routes: appRoutes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
