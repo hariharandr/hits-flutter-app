@@ -13,8 +13,8 @@ class UGDeptPage extends StatelessWidget {
       appBar: const CustomAppBar(),
       body: ListView(
         padding: const EdgeInsets.all(10),
-        children: const <Widget>[
-          Hero(
+        children: <Widget>[
+          const Hero(
             tag: 'topic1image',
             child: SizedBox(
               child: Icon(
@@ -23,7 +23,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ),
           ),
-          Text(
+          const Text(
             'UG',
             style:
                 TextStyle(height: 2, fontSize: 20, fontWeight: FontWeight.bold),
