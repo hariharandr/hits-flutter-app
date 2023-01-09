@@ -1,6 +1,7 @@
 import 'package:admissionenquiry/widgets/app_bar.dart';
 import 'package:admissionenquiry/widgets/depts_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UGDeptPage extends StatelessWidget {
   const UGDeptPage({super.key});
@@ -8,10 +9,24 @@ class UGDeptPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: Text('UG Departments')),
+      appBar: const CustomAppBar(),
       body: ListView(
         padding: const EdgeInsets.all(10),
         children: const <Widget>[
+          Hero(
+            tag: 'topic1image',
+            child: SizedBox(
+              child: Icon(
+                FontAwesomeIcons.graduationCap,
+                size: 150.0,
+              ),
+            ),
+          ),
+          Text(
+            'UG',
+            style:
+                TextStyle(height: 2, fontSize: 20, fontWeight: FontWeight.bold),
+          ),
           DeptTile(
               deptName: 'Department of Aeronautical Engineering',
               programmes: [

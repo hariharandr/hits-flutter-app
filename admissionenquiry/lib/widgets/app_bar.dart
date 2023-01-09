@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:admissionenquiry/theme/config.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
-  final Widget title;
-
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xff2e3745),
+      // backgroundColor: Colors.white,
       toolbarHeight: 100.0,
       title: Center(
         child: Column(
@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             const SizedBox(
               height: 15.0,
             ),
-            title,
+            Image.asset('assets/HITSLogo.png'),
           ],
         ),
       ),

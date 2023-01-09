@@ -15,7 +15,8 @@ class CustomTheme with ChangeNotifier {
     //1
     return ThemeData(
       //2
-      primaryColor: CustomColors.purple,
+      primarySwatch: Colors.deepPurple,
+      primaryColor: CustomColors.primaryColor,
       scaffoldBackgroundColor: Colors.white,
       fontFamily: 'Montserrat', //3
       textButtonTheme: TextButtonThemeData(
