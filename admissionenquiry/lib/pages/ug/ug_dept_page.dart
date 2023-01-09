@@ -1,3 +1,4 @@
+import 'package:admissionenquiry/pages/ug/ug_course_page.dart';
 import 'package:admissionenquiry/widgets/app_bar.dart';
 import 'package:admissionenquiry/widgets/depts_tile.dart';
 import 'package:flutter/material.dart';
@@ -31,20 +32,30 @@ class UGDeptPage extends StatelessWidget {
               deptName: 'Department of Aeronautical Engineering',
               programmes: [
                 ListTile(
-                  title: Text('B.Tech - Aeronautical Engineering'),
+                  title: const Text('B.Tech - Aeronautical Engineering'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const UGCoursePage(
+                                courseName: 'B.Tech - Aeronautical Engineering',
+                                topic: 'About the Programme',
+                              )),
+                    );
+                  },
                 ),
-                ListTile(
+                const ListTile(
                   title: Text('B.Tech - Aerospace Engineering'),
                 ),
               ]),
-          DeptTile(
+          const DeptTile(
               deptName: 'Department of Automobile Engineering',
               programmes: [
                 ListTile(
                   title: Text('B.Tech - Automobile Engineering'),
                 )
               ]),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Chemical Engineering',
             programmes: [
               ListTile(
@@ -55,7 +66,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Computer Science and Engineering',
             programmes: [
               ListTile(
@@ -75,7 +86,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Civil Engineering',
             programmes: [
               ListTile(
@@ -83,7 +94,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Electronics and Communication Engineering',
             programmes: [
               ListTile(
@@ -92,7 +103,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Electrical and Electronics Engineering',
             programmes: [
               ListTile(
@@ -100,7 +111,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Information Technology',
             programmes: [
               ListTile(
@@ -108,7 +119,7 @@ class UGDeptPage extends StatelessWidget {
               ),
             ],
           ),
-          DeptTile(
+          const DeptTile(
             deptName: 'Department of Mechanical Engineering',
             programmes: [
               ListTile(
