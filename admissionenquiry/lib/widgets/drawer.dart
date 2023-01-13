@@ -29,22 +29,25 @@ class TopicDrawer extends StatelessWidget {
               itemCount: ugRepo.getCourse(drawerHeader).courseInfo.keys.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                    title: Text(ugRepo
-                        .getCourse(drawerHeader)
-                        .courseInfo
-                        .keys
-                        .elementAt(index)),
-                    onTap: () => Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => UGCoursePage(
-                                  courseName: drawerHeader,
-                                  topic: ugRepo
-                                      .getCourse(drawerHeader)
-                                      .courseInfo
-                                      .keys
-                                      .elementAt(index),
-                                ))));
+                  title: Text(ugRepo
+                      .getCourse(drawerHeader)
+                      .courseInfo
+                      .keys
+                      .elementAt(index)),
+                  onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UGCoursePage(
+                        courseName: drawerHeader,
+                        topic: ugRepo
+                            .getCourse(drawerHeader)
+                            .courseInfo
+                            .keys
+                            .elementAt(index),
+                      ),
+                    ),
+                  ),
+                );
               },
             ),
           )

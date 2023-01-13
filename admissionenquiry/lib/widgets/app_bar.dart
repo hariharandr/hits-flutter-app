@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             const SizedBox(
               height: 15.0,
             ),
-            Image.asset('assets/HITSLogo.png'),
+            Hero(tag: "hitslogoimg", child: Image.asset('assets/HITSLogo.png')),
           ],
         ),
       ),

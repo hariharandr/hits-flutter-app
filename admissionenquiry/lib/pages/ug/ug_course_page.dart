@@ -3,6 +3,8 @@ import 'package:admissionenquiry/models/UGCourseRepository.dart';
 import 'package:admissionenquiry/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/app_bar.dart';
+
 UGCourseRepository ugRepo = UGCourseRepository();
 
 class UGCoursePage extends StatefulWidget {
@@ -20,6 +22,7 @@ class _UGCoursePageState extends State<UGCoursePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

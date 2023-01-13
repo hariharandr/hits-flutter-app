@@ -1,33 +1,131 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class WavyTextLiquidFill extends StatelessWidget {
+class WavyTextLiquidFill extends StatefulWidget {
   const WavyTextLiquidFill({super.key});
 
   @override
+  State<WavyTextLiquidFill> createState() => _WavyTextLiquidFillState();
+}
+
+class _WavyTextLiquidFillState extends State<WavyTextLiquidFill> {
+  Future<void>? _launched;
+
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
+    if (snapshot.hasError) {
+      return Text('Error: ${snapshot.error}');
+    } else {
+      return const Text('');
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final Uri toLaunch =
+        Uri(scheme: 'https', host: 'apply.hindustanuniv.ac.in', path: '/');
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        child: TextLiquidFill(
-          text: 'Hindustan University',
-          waveDuration: const Duration(seconds: 6),
-          loadDuration: const Duration(seconds: 4),
-          waveColor: const Color(0xFF262a2d),
-          boxBackgroundColor: Colors.orange,
-          textAlign: TextAlign.center,
-          textStyle: const TextStyle(
-            fontSize: 50.0,
-            fontWeight: FontWeight.bold,
-
-            // color: Colors.blueAccent,
+      child: Stack(
+        children: [
+          Card(
+            // color: Colors.orange,
+            elevation: 5,
+            clipBehavior: Clip.antiAlias,
+            child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 200,
+                foregroundDecoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.black,
+                      Colors.transparent,
+                      Colors.transparent,
+                      Colors.black
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.topRight,
+                    stops: [0, 0.2, 0.8, 1],
+                  ),
+                  // image: DecorationImage(
+                  //   fit: BoxFit.fitHeight,
+                  //   image: AssetImage(
+                  //     'assets/heroCard.jpg',
+                  //   ),
+                  // ),
+                ),
+                child: Image.asset(
+                  'assets/heroCard.jpg',
+                  fit: BoxFit.fitHeight,
+                )),
           ),
-          boxHeight: 150,
-        ),
+          Center(
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Center(
+                  child: Text(
+                    "GET STARTED AT | HITS",
+                    style: TextStyle(
+                      // backgroundColor: Colors.orange,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => setState(() {
+                    _launched = _launchInBrowser(toLaunch);
+                  }),
+                  child: Card(
+                    clipBehavior: Clip.antiAlias,
+                    elevation: 5,
+                    child: TextLiquidFill(
+                      text: 'Apply Now',
+                      waveDuration: const Duration(seconds: 40),
+                      loadUntil: 1.0,
+                      waveColor: const Color(0xFF262a2d),
+                      boxBackgroundColor: Colors.green,
+                      textAlign: TextAlign.end,
+                      textStyle: const TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+
+                        // color: Colors.blueAccent,
+                      ),
+                      boxHeight: 50,
+                      boxWidth: 200,
+                    ),
+                  ),
+                ),
+                FutureBuilder<void>(future: _launched, builder: _launchStatus),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
+
+  // final Uri url = Uri.parse('https://apply.hindustanuniv.ac.in/');
+  // _launchURLBrowser() async {
+  //   const Uri url = 'https://flutterdevs.com/';
+  //   if (await canLaunch(url)) {
+  //     await launchUrl(url);
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
 }
 
 // import 'dart:math';

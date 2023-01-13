@@ -1,7 +1,8 @@
 import 'package:admissionenquiry/widgets/app_bar.dart';
 import 'package:admissionenquiry/widgets/drawer.dart';
+import 'package:admissionenquiry/widgets/home_page_drawer.dart';
 import 'package:admissionenquiry/widgets/programs.dart';
-import 'package:admissionenquiry/widgets/title.dart';
+import 'package:admissionenquiry/widgets/title_animation.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
@@ -11,24 +12,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            WavyTextLiquidFill(),
-            Text(
-              'Explore Our Programmes',
-              style: Theme.of(context).textTheme.headline3,
-              textAlign: TextAlign.center,
-            ),
-            const Programs(),
-          ],
+        appBar: const CustomAppBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const WavyTextLiquidFill(),
+              Text(
+                'Explore Our Programmes',
+                style: Theme.of(context).textTheme.headline3,
+                textAlign: TextAlign.center,
+              ),
+              const Programs(),
+            ],
+          ),
         ),
-      ),
-      drawer: TopicDrawer(
-        drawerHeader: 'Home',
-      ),
-    );
+        drawer: const HomePageDrawer());
   }
 }
 

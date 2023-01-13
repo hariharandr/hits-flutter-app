@@ -1,3 +1,4 @@
+import 'package:admissionenquiry/services/MyRoute.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:admissionenquiry/widgets/topics/topic_item.dart';
@@ -27,9 +28,8 @@ class Programs extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const UGDeptPage(),
-                  ),
+                  MyRoute(
+                      builder: (BuildContext context) => const UGDeptPage()),
                 );
               },
               child: Column(
@@ -48,14 +48,16 @@ class Programs extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        topic1,
-                        style: const TextStyle(
-                          height: 1.5,
-                          fontWeight: FontWeight.bold,
+                      child: Center(
+                        child: Text(
+                          topic1,
+                          style: const TextStyle(
+                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.fade,
+                          softWrap: false,
                         ),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
                       ),
                     ),
                   ),
@@ -92,14 +94,16 @@ class Programs extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        topic2,
-                        style: const TextStyle(
-                          height: 1.5,
-                          fontWeight: FontWeight.bold,
+                      child: Center(
+                        child: Text(
+                          topic2,
+                          style: const TextStyle(
+                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.fade,
+                          softWrap: false,
                         ),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
                       ),
                     ),
                   ),
@@ -136,14 +140,16 @@ class Programs extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        topic3,
-                        style: const TextStyle(
-                          height: 1.5,
-                          fontWeight: FontWeight.bold,
+                      child: Center(
+                        child: Text(
+                          topic3,
+                          style: const TextStyle(
+                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.fade,
+                          softWrap: false,
                         ),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
                       ),
                     ),
                   ),
@@ -180,14 +186,16 @@ class Programs extends StatelessWidget {
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        topic4,
-                        style: const TextStyle(
-                          height: 1.5,
-                          fontWeight: FontWeight.bold,
+                      child: Center(
+                        child: Text(
+                          topic4,
+                          style: const TextStyle(
+                            height: 1.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          overflow: TextOverflow.fade,
+                          softWrap: false,
                         ),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
                       ),
                     ),
                   ),
