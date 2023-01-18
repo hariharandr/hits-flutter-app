@@ -1,41 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-
-Widget checkIfAssetOrText(String text) {
-  if (text.contains(RegExp(r'https?:\/\/\S+')) && text.endsWith(".jpg")) {
-    return CachedNetworkImage(
-      placeholder: (context, url) => const CircularProgressIndicator(),
-      imageUrl: text,
-    );
-  } else if (text.endsWith(".pdf")) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: InkWell(
-        child: Text(
-          "View PDF",
-          style: const TextStyle(
-              color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.left,
-        ),
-        onTap: () async {
-          var url = "https://www.example.com/document.pdf";
-          if (await canLaunch(url)) {
-            await launch(url);
-          } else {
-            throw 'Could not launch $url';
-          }
-        },
-      ),
-    );
-  } else {
-    return Text(
-      "\t\t " + text,
-      style: const TextStyle(color: Colors.black, fontSize: 20.0),
-      textAlign: TextAlign.left,
-    );
-  }
-}
+import 'checkIfAssetOrText.dart';
 
 Widget renderUgPageLayout(var info) {
   if (info.runtimeType == String) {
@@ -47,8 +11,6 @@ Widget renderUgPageLayout(var info) {
           color: Colors.black,
           fontSize: 20.0,
           height: 1.5,
-          // wordSpacing: 2,
-          // letterSpacing: 1.0,
           fontWeight: FontWeight.bold,
         ),
         textAlign: TextAlign.justify,
@@ -80,14 +42,8 @@ Widget renderUgPageLayout(var info) {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: checkIfAssetOrText(infoMap.values.elementAt(index)),
-                // Text(
-                //   "\t\t url" +infoMap.values.elementAt(index) ,
-                //   style: const TextStyle(color: Colors.black, fontSize: 20.0),
-                //   textAlign: TextAlign.justify,
-                // ),
-              ),
+                  padding: const EdgeInsets.only(top: 10),
+                  child: checkIfAssetOrText(infoMap.values.elementAt(index))),
             ],
           );
         }),
@@ -140,11 +96,6 @@ Widget renderUgPageLayout(var info) {
                           infoMap[infoMap.keys.elementAt(index1)]!
                               .values
                               .elementAt(index2))
-                      // Text(
-                      //   "\t\t  url ${infoMap[infoMap.keys.elementAt(index1)]!.values.elementAt(index2)}",
-                      //   style: const TextStyle(
-                      //       color: Colors.black, fontSize: 20.0),
-                      // ),
                     ],
                   );
                 },
@@ -155,6 +106,6 @@ Widget renderUgPageLayout(var info) {
       ),
     );
   } else {
-    return Text("");
+    return const Text("null");
   }
 }

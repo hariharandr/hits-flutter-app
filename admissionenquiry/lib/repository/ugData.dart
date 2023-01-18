@@ -96,11 +96,13 @@ var ugData = <dynamic, dynamic>{
               "https://hindustanuniv.ac.in/assets/pdf/ug/CBCS/cbcs-aeronautical-2015-16.pdf",
         },
       },
-      "Prominent Alumnus": [
-        "https://hindustanuniv.ac.in/assets/img/aero_dept/alumni/aero-alu-1.jpg",
-        "https://hindustanuniv.ac.in/assets/img/aero_dept/alumni/aero-alu-2.jpg",
-      ],
-      "Honours": ["Aerodynamics", "Structures", "Propulsion"],
+      "Prominent Alumnus": {
+        "Ms. Swati Narang":
+            "https://hindustanuniv.ac.in/assets/img/aero_dept/alumni/aero-alu-1.jpg",
+        "Mr. Manu Jayakumar":
+            "https://hindustanuniv.ac.in/assets/img/aero_dept/alumni/aero-alu-2.jpg",
+      },
+      "Honours": {"Aerodynamics": "", "Structures": "", "Propulsion": ""},
     },
   },
 };
