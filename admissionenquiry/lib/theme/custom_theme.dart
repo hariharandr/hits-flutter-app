@@ -15,7 +15,7 @@ class CustomTheme with ChangeNotifier {
     //1
     return ThemeData(
       //2
-      primarySwatch: Colors.deepPurple,
+      // primarySwatch: Colors.greenAccent,
       primaryColor: CustomColors.primaryColor,
       scaffoldBackgroundColor: Colors.white,
       fontFamily: 'Montserrat', //3
@@ -24,7 +24,7 @@ class CustomTheme with ChangeNotifier {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
           ),
-          backgroundColor: CustomColors.lightPurple,
+          backgroundColor: CustomColors.secondaryColor,
         ),
       ),
     );
@@ -34,7 +34,8 @@ class CustomTheme with ChangeNotifier {
     return ThemeData(
       brightness: Brightness.dark,
       // visualDensity: const VisualDensity(horizontal: 2.0, vertical: 2.0),
-      primaryColor: CustomColors.darkGrey,
+      primarySwatch: Colors.green,
+      primaryColor: CustomColors.secondaryAccentColor,
       scaffoldBackgroundColor: Colors.black,
       fontFamily: 'Montserrat',
       textTheme: ThemeData.dark().textTheme,
@@ -43,7 +44,7 @@ class CustomTheme with ChangeNotifier {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18.0),
           ),
-          backgroundColor: CustomColors.lightPurple,
+          backgroundColor: CustomColors.secondaryColor,
         ),
       ),
     );

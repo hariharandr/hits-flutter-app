@@ -14,13 +14,18 @@ class DeptTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-        title: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
-          child: Text(
-            deptName,
-            style: TextStyle(fontSize: deptsFontSize),
+      title: Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: Text(
+          deptName,
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        children: programmes);
+      ),
+      children: programmes,
+    );
   }
 }

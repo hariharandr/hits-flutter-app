@@ -1,3 +1,5 @@
+import 'package:admissionenquiry/services/MyRoute.dart';
+import 'package:admissionenquiry/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:admissionenquiry/widgets/topics/topic_item.dart';
@@ -15,7 +17,7 @@ class Programs extends StatelessWidget {
     var topic4 = 'CODE';
     return GridView.count(
       primary: false,
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(5),
       crossAxisSpacing: 10.0,
       crossAxisCount: 2,
       shrinkWrap: true,
@@ -23,40 +25,46 @@ class Programs extends StatelessWidget {
         Hero(
           tag: 'topic1image',
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              //set border radius more than 50% of height and width to make circle
+            ),
+            elevation: 10,
+            color: CustomColors.primaryAccentColor,
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (BuildContext context) => const UGDeptPage(),
-                  ),
+                      builder: (BuildContext context) => const UGDeptPage()),
                 );
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const Flexible(
                     flex: 3,
                     child: Center(
                       child: Icon(
+                        color: Colors.black,
                         FontAwesomeIcons.graduationCap,
-                        size: 100.0,
+                        size: 70.0,
                       ),
                     ),
                   ),
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        topic1,
-                        style: const TextStyle(
-                          height: 1.5,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
+                    child: Text(
+                      topic1,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        height: 1.5,
+                        fontWeight: FontWeight.bold,
                       ),
+                      overflow: TextOverflow.fade,
+                      softWrap: false,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],
@@ -67,6 +75,12 @@ class Programs extends StatelessWidget {
         Hero(
           tag: 'topic2image',
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              //set border radius more than 50% of height and width to make circle
+            ),
+            elevation: 10,
+            color: CustomColors.primaryAccentColor,
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () {
@@ -84,18 +98,20 @@ class Programs extends StatelessWidget {
                     flex: 3,
                     child: Center(
                       child: Icon(
+                        color: Colors.black,
                         FontAwesomeIcons.userGraduate,
-                        size: 100.0,
+                        size: 70.0,
                       ),
                     ),
                   ),
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Center(
                       child: Text(
                         topic2,
                         style: const TextStyle(
-                          height: 1.5,
+                          fontSize: 20,
+                          color: Colors.black,
+                          // height: 1.5,
                           fontWeight: FontWeight.bold,
                         ),
                         overflow: TextOverflow.fade,
@@ -111,6 +127,12 @@ class Programs extends StatelessWidget {
         Hero(
           tag: 'topic3image',
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              //set border radius more than 50% of height and width to make circle
+            ),
+            elevation: 10,
+            color: CustomColors.primaryAccentColor,
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () {
@@ -128,17 +150,19 @@ class Programs extends StatelessWidget {
                     flex: 3,
                     child: Center(
                       child: Icon(
+                        color: Colors.black,
                         FontAwesomeIcons.book,
-                        size: 100.0,
+                        size: 70.0,
                       ),
                     ),
                   ),
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Center(
                       child: Text(
                         topic3,
                         style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
                           height: 1.5,
                           fontWeight: FontWeight.bold,
                         ),
@@ -155,6 +179,12 @@ class Programs extends StatelessWidget {
         Hero(
           tag: 'topic4image',
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              //set border radius more than 50% of height and width to make circle
+            ),
+            elevation: 10,
+            color: CustomColors.primaryAccentColor,
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: () {
@@ -172,17 +202,19 @@ class Programs extends StatelessWidget {
                     flex: 3,
                     child: Center(
                       child: Icon(
+                        color: Colors.black,
                         FontAwesomeIcons.chalkboardUser,
-                        size: 100.0,
+                        size: 70.0,
                       ),
                     ),
                   ),
                   Flexible(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Center(
                       child: Text(
                         topic4,
                         style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
                           height: 1.5,
                           fontWeight: FontWeight.bold,
                         ),

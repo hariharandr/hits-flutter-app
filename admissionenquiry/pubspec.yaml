@@ -39,6 +39,10 @@ dependencies:
   video_player: ^2.4.8
   font_awesome_flutter: ^10.3.0
   animated_text_kit: ^4.2.2
+  url_launcher: ^6.0.12
+  getwidget: ^3.0.1
+  animations: ^2.0.7
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
@@ -51,12 +55,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-flutter_native_splash:
-  color: "#2e3745"
-  image: assets/HITSLogo.png
+  # For information on the generic Dart part of this file, see the
+  # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -68,6 +68,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/HITSLogo.png
+    - assets/heroCard.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
