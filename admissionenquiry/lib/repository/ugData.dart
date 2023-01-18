@@ -103,6 +103,7 @@ var ugData = <dynamic, dynamic>{
             "https://hindustanuniv.ac.in/assets/img/aero_dept/alumni/aero-alu-2.jpg",
       },
       "Honours": {"Aerodynamics": "", "Structures": "", "Propulsion": ""},
+        "Gallery": {""},
     },
   },
 };
