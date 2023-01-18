@@ -1,3 +1,4 @@
+import 'package:admissionenquiry/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:admissionenquiry/theme/config.dart';
 
@@ -9,7 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // backgroundColor: Colors.white,
+      backgroundColor: CustomColors.primaryAccentColor,
       toolbarHeight: 100.0,
       title: Center(
         child: Column(

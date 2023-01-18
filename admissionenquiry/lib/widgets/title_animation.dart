@@ -1,6 +1,8 @@
+import 'package:admissionenquiry/theme/colors.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:getwidget/getwidget.dart';
 
 class WavyTextLiquidFill extends StatefulWidget {
   const WavyTextLiquidFill({super.key});
@@ -36,81 +38,111 @@ class _WavyTextLiquidFillState extends State<WavyTextLiquidFill> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Stack(
+        alignment: AlignmentDirectional.center,
         children: [
           Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+              //set border radius more than 50% of height and width to make circle
+            ),
             // color: Colors.orange,
-            elevation: 5,
+            elevation: 10,
             clipBehavior: Clip.antiAlias,
             child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 200,
-                foregroundDecoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Colors.black,
-                      Colors.transparent,
-                      Colors.transparent,
-                      Colors.black
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.topRight,
-                    stops: [0, 0.2, 0.8, 1],
-                  ),
-                  // image: DecorationImage(
-                  //   fit: BoxFit.fitHeight,
-                  //   image: AssetImage(
-                  //     'assets/heroCard.jpg',
-                  //   ),
-                  // ),
-                ),
-                child: Image.asset(
-                  'assets/heroCard.jpg',
-                  fit: BoxFit.fitHeight,
-                )),
-          ),
-          Center(
-            child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const Center(
-                  child: Text(
-                    "GET STARTED AT | HITS",
-                    style: TextStyle(
-                      // backgroundColor: Colors.orange,
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-                InkWell(
-                  onTap: () => setState(() {
-                    _launched = _launchInBrowser(toLaunch);
-                  }),
-                  child: Card(
-                    clipBehavior: Clip.antiAlias,
-                    elevation: 5,
-                    child: TextLiquidFill(
-                      text: 'Apply Now',
-                      waveDuration: const Duration(seconds: 40),
-                      loadUntil: 1.0,
-                      waveColor: const Color(0xFF262a2d),
-                      boxBackgroundColor: Colors.green,
-                      textAlign: TextAlign.end,
-                      textStyle: const TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.bold,
-
-                        // color: Colors.blueAccent,
-                      ),
-                      boxHeight: 50,
-                      boxWidth: 200,
-                    ),
-                  ),
-                ),
-                FutureBuilder<void>(future: _launched, builder: _launchStatus),
-              ],
+              width: MediaQuery.of(context).size.width,
+              height: 250,
+              child: Image.asset(
+                'assets/heroCard.jpg',
+                fit: BoxFit.fitHeight,
+              ),
+              // foregroundDecoration: const BoxDecoration(
+              //   gradient: LinearGradient(
+              //     colors: [
+              //       Colors.black,
+              //       Colors.transparent,
+              //       Colors.transparent,
+              //       Colors.black
+              //     ],
+              //     begin: Alignment.topLeft,
+              //     end: Alignment.topRight,
+              //     stops: [0, 0.9, 0.8, 1],
+              //   ),
+              //   // image: DecorationImage(
+              //   //   fit: BoxFit.fitHeight,
+              //   //   image: AssetImage(
+              //   //     'assets/heroCard.jpg',
+              //   //   ),
+              //   // ),
+              // ),
             ),
+          ),
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+              //set border radius more than 50% of height and width to make circle
+            ),
+            color: Colors.transparent.withOpacity(0.0),
+            // elevation: 5,
+            clipBehavior: Clip.antiAlias,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 200,
+            ),
+          ),
+          Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // const Center(
+              //   child: Text(
+              //     "GET STARTED AT | HITS",
+              //     style: TextStyle(
+              //       // backgroundColor: Colors.orange,
+              //       fontSize: 34,
+              //       fontWeight: FontWeight.bold,
+              //       color: Colors.orangeAccent,
+              //       // shadows: [
+              //       //   Shadow(
+              //       //     color: Colors.black.withOpacity(0.3),
+              //       //     offset: const Offset(15, 15),
+              //       //     blurRadius: 15,
+              //       //   ),
+              //       // ],
+              //     ),
+              //   ),
+              // ),
+              InkWell(
+                onTap: () => setState(() {
+                  _launched = _launchInBrowser(toLaunch);
+                }),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    //set border radius more than 50% of height and width to make circle
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  elevation: 10,
+                  color: const Color(0xFF262a2d),
+                  child: TextLiquidFill(
+                    text: 'Apply Now',
+                    waveDuration: const Duration(seconds: 40),
+                    loadUntil: 1.0,
+                    waveColor: Colors.white,
+                    boxBackgroundColor: CustomColors.secondaryColor,
+                    textAlign: TextAlign.end,
+                    textStyle: const TextStyle(
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+
+                      // color: Colors.blueAccent,
+                    ),
+                    boxHeight: 50,
+                    boxWidth: 200,
+                  ),
+                ),
+              ),
+              FutureBuilder<void>(future: _launched, builder: _launchStatus),
+            ],
           ),
         ],
       ),

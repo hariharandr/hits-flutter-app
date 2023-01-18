@@ -1,4 +1,5 @@
 import 'package:admissionenquiry/pages/custom_splash_screen.dart';
+import 'package:admissionenquiry/pages/openContainer_splash.dart';
 import 'package:admissionenquiry/routes.dart';
 import 'package:admissionenquiry/widgets/testwidget.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: MyApp.appTitle,
-      home: SafeArea(child: CustomSplashScreen()),
+      home: const SafeArea(child: CustomSplashScreen()),
       // home: TestApp(),
       theme: CustomTheme.lightTheme, //3
       darkTheme: CustomTheme.darkTheme, //4
